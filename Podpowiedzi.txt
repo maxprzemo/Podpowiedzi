@@ -1,0 +1,96 @@
+
+## Tworzenie pliku .patch ##
+git format-patch -1 HEAD --stdout > 001.patch
+
+## Najpierw clone z git chuba do jakiegoś katalogu ##
+
+###############################################################################
+zrob najpierw DO INNEGO katalogu clone tego twojego czegos co chcesz patchowac
+potemn
+git remote add nazwa
+http://git
+....
+git fetch nazwea
+git fetch nazwa
+potem
+git cherry-pick _commit_numer_
+poprawiasz bo sie wyjebie
+potem  jak sie wyjebalo po naprawieniu
+git commit -a
+i 
+git format-patch -1 HEAD --stdout > 0001-last-commit.patch
+##############################################################################
+
+git add --all
+git commit -m 'opis zmian'
+git push
+
+#############################################################################
+./cpa-build.sh codina true -j6
+
+
+
+############################################################################
+rhythmbox ~/codina/Argon.ogg
+#############################################################################
+chmod 777
+
+################################
+AICP
+________________________________
+. build/envsetup.sh
+breakfast
+brunch codina -j6
+
+_________________________________
+
+##################################
+ZMIANA WERSJI JAVA !!!
+#################################
+
+sudo update-alternatives --config java
+
+_____________________________________________
+
+################################################
+COFANIE ZMIAN NA GITHUB !!!!
+###############################################
+
+git revert numer_commitu
+
+# Point master to '56e05fce' and
+# make working directory the same with '56e05fce'
+git reset --hard 56e05fce
+
+# Now working directory is the same '56e05fce' and
+# master points to the original revision. Then we create a commit.
+git commit -a -m "Revert to 56e05fce"
+
+################################################
+SZUKANIE PO NAZWIE COMMITU 
+#####################################################################
+																	#
+git log --grep="nazwa"                                              #
+																	#
+																	#
+#####################################################################
+LOGCAT   adb                                                        #
+#####################################################################
+	                                                                #
+adb logcat -c          <<< Czyszczenie logu                         #
+
+adb logcat *:E     <<< Log samych errorów
+                                                                    #
+adb logcat -b radio    <<< Log radia ( RIL )                        #
+                                                                    #
+getprop | grep ril     <<< pobranie danych radia                    #
+                                                                    #
+getprop                <<< pobranie danych prop                     #
+                                                                    #
+procrank               <<< spis procesów                            #
+                                                                    #
+#####################################################################
+
+
+
+

@@ -1,0 +1,17 @@
+#!/system/bin/sh
+
+mount -o remount,rw /system 2>/dev/null
+busybox --install -s system/xbin
+
+# Convert the size of ZRAM
+# ZRAM optimal size is 1/4 the size of RAM
+RAM=$(cat /proc/meminfo | grep "MemTotal" | awk '{print $2}')
+ZRAM=$(echo $((RAM/4)))
+
+swapoff /dev/block/zram0 > /dev/null 2>&1
+echo "1" > /sys/devices/virtual/block/zram0/reset
+echo $((ZRAM*1024)) > /sys/block/zram0/disksize
+mkswap /dev/block/zram0 > /dev/null 2>&1
+swapon /dev/block/zram0 > /dev/null 2>&1
+
+mount -o remount,ro /system 2>/dev/null
